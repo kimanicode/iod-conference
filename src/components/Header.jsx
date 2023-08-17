@@ -2,6 +2,8 @@ import React ,{useState} from 'react'
 import { HiMenuAlt3 ,HiX} from "react-icons/hi";
 import Logo from '../assets/logo.jpg'
 
+import { Link,useLocation } from "react-router-dom";
+
 const Header = ()=>{
 
     const [nav ,setNav] = useState(false)
@@ -14,21 +16,30 @@ const Header = ()=>{
     function handleClick(){
       setNav(!nav)
    }
-
+   const location = useLocation();
     return (
         
         <div className=' bg-white py-3 px-6 h-14 sticky top-0 z-10  w-full'>
             <div className='flex justify-between  '>
             <div className=' flex '>
                      
-                    <img src ={Logo} className='md:h-12 h-10 w-full ' />
+            <Link to={ "https://iodkenya.com" }  ><img src ={Logo} className='md:h-12 h-10 w-full ' />
+            </Link>
                
             </div>
             <div>
               <ul className='justify-between  hidden md:flex pr-16'>
-                  <li className='px-3 hover:text-xan cursor-pointer border-b-2 border-b-xan text-marian'>Home</li>
-                  <li className='px-3 hover:text-xan  cursor-pointer text-marian'>Programme</li>
-                  <li className='px-3 hover:text-xan  cursor-pointer text-marian'>Speakers</li>
+                  <li className= {location.pathname === '/' ? 'px-3 hover:text-xan cursor-pointer border-b-2 border-b-xan text-marian' : 'px-3 hover:text-xan cursor-pointer text-marian'}>
+                  <Link to='/'>Home</Link>
+                  </li>
+
+
+                  <li className= {location.pathname === '/programme' ? 'px-3 hover:text-xan cursor-pointer border-b-2 border-b-xan text-marian' : 'px-3 hover:text-xan cursor-pointer text-marian'}>
+                  <Link to='/programme'>Programme</Link>
+                  </li>
+
+
+                  <li className={location.pathname === '/speakers' ? 'px-3 hover:text-xan cursor-pointer border-b-2 border-b-xan text-marian' : 'px-3 hover:text-xan cursor-pointer text-marian'}><Link to='/speakers'>Speakers</Link></li>
                   
               </ul>
             </div>
@@ -41,9 +52,12 @@ const Header = ()=>{
         {nav &&         
             <ul className='px-8  inline-block bg-white text-center w-full flex flex-col '>
 
-                <li className='py-2  cursor-pointer border-b-2 border-b-xan text-marian'>Home</li>
-                <li className='py-2  cursor-pointer text-marian'>Programme </li>
-                <li className='py-2  cursor-pointer text-marian'>Speakers</li>
+                <li className={location.pathname === '/' ? 'py-2 border-b-2 border-b-xan  cursor-pointer text-marian':'py-2  cursor-pointer text-marian'} onClick={handleLinkClick}><Link to='/'>Home</Link></li>
+
+
+                <li className={location.pathname === '/programme' ? 'py-2 border-b-2 border-b-xan  cursor-pointer text-marian':'py-2  cursor-pointer text-marian' } onClick={handleLinkClick}><Link to='/programme'>Programme</Link></li>
+
+                <li className={location.pathname === '/speakers' ? 'py-2 border-b-2 border-b-xan  cursor-pointer text-marian':'py-2  cursor-pointer text-marian'} onClick={handleLinkClick}><Link to='/speakers'>Speakers</Link></li>
                
             
             </ul>

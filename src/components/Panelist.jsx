@@ -2,8 +2,16 @@ import React from 'react'
 import pcs from '../assets/mudavadi.jpg';
 import eqt from '../assets/Mwangi_profile.jpg';
 import chair from '../assets/Nelson.png';
+import { useNavigate , Link} from "react-router-dom";
 
 const Panelist = () => {
+    const navigate = useNavigate();
+
+    const seeSpeakers =()=>
+    {
+        navigate('/speakers')
+    }
+   
   return (
     <div  className='py-3 px-8 '>
         <h2 className='text-center py-5  font-bold text-marian text-3xl'>Star Panelist</h2>
@@ -12,7 +20,7 @@ const Panelist = () => {
         <div className='flex justify-center flex-wrap'>
             
 
-            <div className='bg-slate-200 rounded-xl flex flex-col m-2 '>
+            <div className='bg-slate-200 rounded-xl flex flex-col m-2 md:basis-1/4 '>
                 <div className='p-5 basis-1/2  '>
                     <img src={pcs} alt="" className='rounded-2xl' />
                 </div>
@@ -23,9 +31,9 @@ const Panelist = () => {
 
             </div>
 
-            <div className='bg-slate-200 rounded-xl flex flex-col m-2 '>
+            <div className='bg-slate-200 rounded-xl flex flex-col m-2   md:basis-1/4 '>
                 <div className='p-5 basis-1/2  '>
-                    <img src={pcs} alt="" className='rounded-2xl' />
+                    <img src={eqt} alt="" className='rounded-2xl' />
                 </div>
                 <div className='text-center basis-1/2 py-2'>
                      <h3 className='font-bold text-marian'>DR. James Mwangi</h3>
@@ -34,9 +42,9 @@ const Panelist = () => {
 
             </div>
 
-            <div className='bg-slate-200 rounded-xl flex flex-col m-2 '>
+            <div className='bg-slate-200 rounded-xl flex flex-col m-2  md:basis-1/4 '>
                 <div className='p-5 basis-1/2  '>
-                    <img src={pcs} alt="" className='rounded-2xl' />
+                    <img src={chair} alt="" className='rounded-2xl' />
                 </div>
                 <div className='text-center basis-1/2 py-2'>
                      <h3 className='font-bold text-marian'>Dr. Nelson Kuria,OGW, fIoDk   </h3>
@@ -50,7 +58,7 @@ const Panelist = () => {
 
 
         <div className='text-center py-5 '>
-                 <button className='bg-xan py-3 px-5 text-white rounded-xl text-center hover:bg-xan/50 '>
+                 <button className='bg-xan py-3 px-5 text-white rounded-xl text-center hover:bg-xan/50 ' onClick={seeSpeakers}>
                     See All Speakers
                 </button>
         </div>
@@ -64,14 +72,20 @@ const Panelist = () => {
 
 
                  <div className='flex md:flex-row flex-col m'>
-                
-                 <button className='bg-xan py-2 px-5  m-2 text-white rounded-xl text-center hover:bg-xan/50 '>
+                 <Link to={ "https://iodkenya.com/calendar/Event/book-event/annual-corporate-governance-conference-2023" } target="_blank">
+                 <button className='bg-xan py-2 px-5  m-2 text-white rounded-xl text-center hover:bg-xan/50 ' >
                     Book Now
                 </button>
+                </Link>
 
-                <button className='bg-xan py-2 px-5 m-2 text-white rounded-xl text-center hover:bg-xan/50 '>
+
+
+                <Link to={ "https://iodkenya.com/calendar/Conference/annual-corporate-governance-conference-2023" } target="_blank">
+                    <button className='bg-xan py-2 px-5 m-2 text-white rounded-xl text-center hover:bg-xan/50 '>
                     Learn more 
-                </button>
+                    </button>
+
+                </Link>
                  </div>
         </div>
 
