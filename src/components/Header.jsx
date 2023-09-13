@@ -40,6 +40,8 @@ const Header = ()=>{
 
 
                   <li className={location.pathname === '/speakers' ? 'px-3 hover:text-xan cursor-pointer border-b-2 border-b-xan text-marian' : 'px-3 hover:text-xan cursor-pointer text-marian'}><Link to='/speakers'>Speakers</Link></li>
+
+                  
                   
               </ul>
             </div>

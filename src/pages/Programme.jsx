@@ -50,20 +50,20 @@ const day2Program = [
 
 const Programme = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 bg-slate-100">
       <h2 className="text-2xl text-center font-semibold mb-4 text-xan">Programme Lineup</h2>
-      <div className="space-y-8 text-center">
+      <div className="space-y-8 text-center flex flex-col items-center">
         <h3 className="text-xl font-semibold mb-2 text-marian">Day 1</h3>
         {day1Program.map((item, index) => (
-          <div key={index} className="border rounded-lg p-4 bg-white shadow-md">
+          <div key={index} className="border rounded-lg p-4 md:w-2/3 w-full bg-white shadow-md">
             <p className="text-gray-600">{item.time}</p>
-            <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
+            <h4 className="text-lg text-marian font-semibold mb-2">{item.title}</h4>
             <p>{item.description}</p>
           </div>
         ))}
         <h3 className="text-xl font-semibold mb-2 text-marian">Day 2</h3>
         {day2Program.map((item, index) => (
-          <div key={index} className="border rounded-lg p-4 bg-white shadow-md">
+          <div key={index} className="border rounded-lg p-4 md:w-2/3 w-full bg-white shadow-md">
             <p className="text-gray-600">{item.time}</p>
             <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
             <p>{item.description}</p>
