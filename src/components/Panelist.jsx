@@ -90,9 +90,11 @@ const Panelist = () => {
                 Windsor Golf Hotel & Country Club is a prestigious hotel and golf resort located in Nairobi, Kenya. It is renowned for offering a luxurious and tranquil setting that combines the beauty of nature with top-notch amenities for both leisure and business travelers. Here are some key highlights about the Windsor Golf Hotel
                 </p>
                 
+                <div className='py-2'>
                 <button className='p-3 bg-xan text-white w-[100px] hover:bg-xan/50 hover:text-marian
                 '>Book Now</button>
 
+                </div>
 
             </div>
 
